@@ -1,0 +1,133 @@
+
+html, body{
+    height:100%;
+    width: 100%;
+}
+
+body {
+    padding: 10px;
+}
+.left-panel {
+    height: 100%;
+    border: 1px solid #000;
+}
+
+.header {
+    height: 70px;
+    display: flex;
+}
+
+.header.col-xs-12 {
+    padding: 0;
+}
+
+.header .logo-container {
+    padding: 24px 36px;
+}
+.navigation-wrapper {
+    display: flex;
+    background : #029f88;
+    justify-content: space-between;
+    color: #9bd9d0;
+}
+
+.left-nav, .right-nav {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.left-nav {
+    font-size: 16px;
+    padding: 24px 0 0 0;
+}
+
+.right-nav {
+    padding: 28px 0 0 0;
+    font-size: 12px;
+}
+
+.sidebar.col-xs-3 {
+    height: calc(100% - 70px);
+    background: #f8f8f8;
+    padding: 30px 36px 50px 36px;
+}
+
+.sidebar .choose-company {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    margin-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #fff;
+}
+.sidebar .choose-company .company-name {
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sidebar .choose-company .company-name div:first-child {
+    font-size: 11px;
+    color: #bbbfc2;
+}
+.sidebar .choose-company .company-name div:last-child {
+    font-size: 14px;
+    color: #545f67;
+}
+.sidebar .choose-company select {
+    border: none;
+}
+
+.sidebar .collate-button {
+    height: 45px;
+    border-radius: 20px;
+    font-size: 16px;
+    background: #15a48f;
+    color: #fff;
+    outline: none;
+}
+
+.sidebar .author-company {
+    color: #b6bbbe;
+    font-size: 11px;
+    position: relative;
+    top: 73%;
+}
+
+.section-table.col-xs-9 {
+    padding: 30px;
+}
+.section-table table th {
+    font-weight: normal;
+    color: #b5b9bd;
+}
+.section-table table td {
+    font-weight: normal;
+    color: #5f6a71;
+}
+
+.section-table table thead th img {
+    width: 20px;
+    cursor: pointer;
+}
+.pagination-panel .pagination > li > a, .pagination > li > span {
+    font-size: 12px;
+    border: none;
+    background: #fff;
+    color: #848c91;
+}
+.per-page-number, .count {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 28px;
+    font-size: 12px;
+    color: #848c91;
+}
+.per-page-number select{
+    border: none;
+}
+

@@ -1,0 +1,23 @@
+{
+  "name": "collate",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "IvanTrutnev <trutnev_1996@mail.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "at-table": "^1.0.7",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
+  }
+}

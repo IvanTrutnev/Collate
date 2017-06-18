@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Collate</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body ng-app="angularTable" ng-controller="basicCtrl">
+    <header class="col-xs-12 header">
+        <nav class="logo-container col-xs-3">
+            <img src="images/logo.png" />
+        </nav>
+        <div class="navigation-wrapper col-xs-9">
+            <nav class="left-nav col-xs-6 col-md-6">
+            <span>
+                Collate
+            </span>
+            <span>
+                Compile
+            </span>
+            <span>
+                Calibrate
+            </span>
+            <span>
+                Consolidate
+            </span>
+        </nav>
+            <nav class="right-nav coll-offset-xs-2 col-md-offset-3 col-xs-4 col-md-3">
+            <span>Setting</span>
+            <span>Admin</span>
+            <span>Log Off<!--<img src="images/off-button.png" />--></span>
+        </nav>
+        </div>
+    </header>
+    <aside class="col-xs-3 sidebar">
+        <div class="choose-company">
+            <div class="company-name">
+                <div>
+                    Company
+                </div>
+                <div>
+                    ZEUS LTD
+                </div>
+            </div>
+            <select>
+
+            </select>
+        </div>
+        <button type="button" class="btn btn-default collate-button col-xs-12">
+            Collate
+        </button>
+        <div class="author-company">
+            © 2017 PTL Limited
+        </div>
+    </aside>
+    <section class="col-xs-9 section-table">
+        <table class="table">
+            <thead>
+            <tr>
+                <th ng-click="sort('id')">No.
+                    <img src="images/icon.png">
+                </th>
+                <th ng-click="sort('Date')">Date
+                    <img src="images/icon.png">
+                </th>
+                <th ng-click="sort('Time')">Time
+                    <img src="images/icon.png">
+                </th>
+                <th ng-click="sort('Company')">Company
+                    <img src="images/icon.png">
+                </th>
+                <th ng-click="sort('Message')">Message
+                    <img src="images/icon.png">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate="item in data|orderBy:sortKey:reverse|itemsPerPage:pageSize" current-page="currentPage">
+                <td>{{item.id}}</td>
+                <td>{{item.Date}}</td>
+                <td>{{item.Time}}</td>
+                <td>{{item.Company}}</td>
+                <td>{{item.Message}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls
+                max-size="pageSize"
+                direction-links="true"
+                boundary-links="false"
+                class="pagination-panel col-xs-6">
+        </dir-pagination-controls>
+        <div class="col-xs-4 per-page-number">
+            <span>Rows per page:</span>
+            <select ng-model="pageSize">
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+            </select>
+        </div>
+        <div class="col-sm-2 count">
+           {{pageSize * (currentPage - defaultValue) + defaultValue}} - {{pageSize * currentPage}} of {{data.length}}
+        </div>
+    </section>
+</body>
+</html>
